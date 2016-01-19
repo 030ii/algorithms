@@ -68,10 +68,10 @@
 
 
  /* 테스트용 배열 */
- var arr1 = [];  // undefined
- var arr2 = [3]; // 3
- var arr3 = [4,-2]; // 4  // NaN이 나옴!! 버그 있음!! 
- var arr4 = [-2, 1, -3, 4, -1, 2, 1, -5, 4];  //6
+ var arr1 = [];  // 원소 0개 // undefined
+ var arr2 = [3]; // 원소 1개 // 3
+ var arr3 = [4,-2]; // 원소 2개 // 4
+ var arr4 = [-2, 1, -3, 4, -1, 2, 1, -5, 4, 10, 3, -2, 5, 3, 6,-4, 0, 7, 2, -1];  //원소 20개 //6
 
  test(arr1);
  test(arr2);
@@ -81,7 +81,7 @@
  /* test하며 정렬의 성공/실패 여부를 확인하는 함수 */
  function test(array){
  	var result_n2 = findMaxSubarray_N2(array);
- 	var result_nlogN = findMaxSubarray(array, 0, array.length);
+ 	var result_nlogN = findMaxSubarray(array, 0, array.length - 1);
 
  	console.log("결과 : "+ result_n2 + "와 " + result_nlogN + "입니다.");
  	console.log(result_n2 == result_nlogN ? "결과가 같습니다" : "결과가 다릅니다");
